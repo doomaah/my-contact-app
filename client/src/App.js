@@ -7,7 +7,7 @@ function App() {
 
   // 1. Ask the Brain for the list of friends
   const fetchContacts = async () => {
-    const res = await axios.get('http://localhost:5000/api/contacts');
+    const res = await axios.get('https://my-contact-app-jbkc.onrender.com/');
     setContacts(res.data);
   };
 
@@ -16,7 +16,7 @@ function App() {
   // 2. Save a new friend
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/contacts', formData);
+    await axios.post('https://my-contact-app-jbkc.onrender.com/', formData);
     setFormData({ name: '', phone: '', email: '' }); // Clear the boxes
     fetchContacts(); // Refresh the list
   };
